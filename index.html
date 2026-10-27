@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Ace International — Pakistan's premier importer of Turkish dairy machinery. Milking machines, milking parlours, cow comfort brushes & genuine spare parts. Order on WhatsApp +92 300 8998211."
+  />
+  <meta name="theme-color" content="#FFC80A" />
+  <title>Ace International | Turkish Dairy Machinery &amp; Spare Parts</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-p3...jest"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aceYellow: '#FFC80A',
+            aceYellowHover: '#E5B200',
+            aceBlack: '#121316',
+            aceDarkSlate: '#1E2025',
+            aceGrayCard: '#F4F5F7',
+            aceGreen: '#1B4332',
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.7s ease-out forwards',
+            'slide-up': 'slideUp 0.7s ease-out forwards',
+            'slide-right': 'slideRight 0.7s ease-out forwards',
+            'blob': 'blob 8s infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            slideRight: {
+              '0%': { opacity: '0', transform: 'translateX(-30px)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' },
+            },
+            blob: {
+              '0%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+              '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+              '100%': { transform: 'translate(0px, 0px) scale(1)' },
+            },
+          },
+          boxShadow: {
+            'ace': '0 10px 30px -10px rgba(255, 200, 10, 0.25)',
+            'ace-card': '0 4px 20px -4px rgba(18, 19, 22, 0.07)',
+            'ace-glow': '0 0 40px rgba(27, 67, 50, 0.10)',
+          },
+          borderRadius: {
+            'xl': '1rem',
+            '2xl': '1.5rem',
+            '3xl': '2rem',
+          },
+          backdropBlur: {
+            xs: '2px',
+          },
+        },
+      },
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-white text-aceBlack font-body antialiased selection:bg-aceYellow selection:text-aceBlack overflow-x-hidden">
+
+  <!-- =========================================
+       SKIP LINK (ACCESSIBILITY)
+       ========================================= -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-aceYellow focus:text-aceBlack focus:rounded focus:font-semibold">
+    Skip to main content
+  </a>
+
+  <!-- =========================================
+       NAVIGATION
+       ========================================= -->
+  <nav id="navbar" class="fixed w-full z-40 transition-all duration-300">
+    <div class="border-b border-black/5 bg-white/80 backdrop-blur-md supports-[backdrop-filter]:bg-white/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <div class="flex items-center gap-2 group cursor-pointer" aria-label="Ace International Home">
+            <div class="w-9 h-9 rounded-xl bg-aceYellow flex items-center justify-center shadow-ace group-hover:shadow-ace/80 transition-shadow">
+              <span class="text-aceBlack font-heading font-bold text-lg">A</span>
+            </div>
+            <div>
+              <div class="font-heading font-bold text-xl tracking-tight text-aceBlack">Ace International</div>
+              <div class="text-[10px] uppercase tracking-wider text-aceGreen font-semibold leading-none">Farm Equipments</div>
+            </div>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center gap-8">
+            <a href="#home" class="nav-link text-sm font-semibold text-aceBlack/70 hover:text-aceBlack transition-colors">Home</a>
+            <a href="#products" class="nav-link text-sm font-semibold text-aceBlack/70 hover:text-aceBlack transition-colors">Products</a>
+            <a href="#why" class="nav-link text-sm font-semibold text-aceBlack/70 hover:text-aceBlack transition-colors">Why Us</a>
+            <a href="#testimonials" class="nav-link text-sm font-semibold text-aceBlack/70 hover:text-aceBlack transition-colors">Testimonials</a>
+            <a href="#faq" class="nav-link text-sm font-semibold text-aceBlack/70 hover:text-aceBlack transition-colors">FAQ</a>
+            <a href="#contact" class="nav-link text-sm font-semibold text-aceBlack/70 hover:text-aceBlack transition-colors">Contact</a>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex items-center gap-3">
+            <a href="#contact" class="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-xl border border-aceBlack/20 bg-white text-sm font-semibold text-aceBlack shadow-ace-card hover:bg-aceGrayCard transition-all hover:shadow-ace">
+              <i class="fas fa-file-contract text-aceGreen"></i> Request Quote
+            </a>
+            <a
+              href="https://wa.me/923008998211?text=Hello%20Ace%20International,%20I%20saw%20your%20landing%20page%20and%20would%20like%20to%20order%20spare%20parts%20or%20request%20a%20parlour%20quote."
+              class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-aceYellow text-aceBlack font-bold text-sm shadow-ace hover:bg-aceYellowHover hover:shadow-ace/80 transition-all active:scale-95"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Order on WhatsApp"
+            >
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden p-2 text-aceBlack rounded-lg hover:bg-aceGrayCard transition-colors" aria-label="Toggle menu" aria-expanded="false">
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden md:hidden border-t border-black/5 bg-white p-4">
+        <div class="flex flex-col gap-3">
+          <a href="#home" class="mobile-link block py-3 text-base font-semibold text-aceBlack/70 hover:text-aceBlack transition-colors border-b border-black/5 pb-3">Home</a>
+          <a href="#products" class="mobile-link block py-3 text-base font-semibold text-aceBlack/70 hover:text-aceBlack transition-colors border-b border-black/5 pb-3">Products</a>
+          <a href="#why" class="mobile-link block py-3 text-base font-semibold text-aceBlack/70 hover:text-aceBlack transition-colors border-b border-black/5 pb-3">Why Us</a>
+          <a href="#testimonials" class="mobile-link block py-3 text-base font-semibold text-aceBlack/70 hover:text-aceBlack transition-colors border-b border-black/5 pb-3">Testimonials</a>
+          <a href="#faq" class="mobile-link block py-3 text-base font-semibold text-aceBlack/70 hover:text-aceBlack transition-colors border-b border-black/5 pb-3">FAQ</a>
+          <a href="#contact" class="mobile-link block py-3 text-base font-semibold text-aceBlack/70 hover:text-aceBlack transition-colors border-b border-black/5 pb-3">Contact</a>
+          <div class="pt-4">
+            <a
+              href="https://wa.me/923008998211?text=Hello%20Ace%20International,%20I%20would%20like%20to%20order%20spare%20parts%20or%20request%20a%20parlour%20quote."
+              class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-aceYellow text-aceBlack font-bold shadow-ace hover:bg-aceYellowHover transition-all active:scale-95"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================================
+       HERO SECTION
+       ========================================= -->
+  <section id="home" class="relative pt-20 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+    <!-- Decorative blobs -->
+    <div class="absolute top-[-10%] left-[-10%] w-72 h-72 bg-aceYellow/20 rounded-full blur-3xl blob animate-blob pointer-events-none"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-aceGreen/10 rounded-full blur-3xl blob animate-blob pointer-events-none" style="animation-delay: -2s;"></div>
+    <div class="absolute top-1/4 right-[-5%] w-64 h-64 bg-aceYellow/15 rounded-full blur-2xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+        <!-- Hero Content -->
+        <div class="order-2 lg:order-1">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-aceGreen/10 border border-aceGreen/20 text-aceGreen text-xs font-bold mb-6 animate-fade-in" style="animation-delay: 0.1s;">
+            <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-aceGreen opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-aceGreen"></span></span>
+            <span>Official Turkish Machinery Importer</span>
+          </div>
+
+          <h1 class="font-heading font-black text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-aceBlack mb-6 animate-slide-up" style="animation-delay: 0.2s;">
+            Premium Turkish Dairy Machinery<br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-aceYellow via-aceYellowHover to-aceGreen">for Pakistani Farms</span>
+          </h1>
+
+          <p class="text-lg md:text-xl text-aceBlack/70 leading-relaxed mb-8 max-w-lg animate-slide-up" style="animation-delay: 0.3s;">
+            Imported Turkish milking machines, complete milking parlours, cow comfort brushes &amp; genuine replacement parts — built to increase yield, reduce labour, and last for years.
+          </p>
+
+          <div class="flex flex-wrap gap-4 animate-slide-up" style="animation-delay: 0.4s;">
+            <a
+              href="https://wa.me/923008998211?text=Hi%20Ace%20International,%20I%20want%20to%20order%20spare%20parts.%20Please%20share%20catalogue%20and%20prices."
+              class="px-8 py-4 rounded-2xl bg-aceYellow text-aceBlack font-heading font-bold text-lg shadow-ace hover:bg-aceYellowHover hover:shadow-ace/80 transition-all active:scale-95 flex items-center gap-2 whitespace-nowrap"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-whatsapp"></i> Order Spare Parts on WhatsApp
+            </a>
+            <a href="#contact" class="px-8 py-4 rounded-2xl border border-aceBlack/20 bg-white text-aceBlack font-heading font-bold text-lg shadow-ace-card hover:bg-aceGrayCard hover:shadow-ace transition-all active:scale-95 whitespace-nowrap">
+              <i class="fas fa-quote-right mr-2"></i> Request Parlour Quote
+            </a>
+          </div>
+
+          <!-- Trust bar -->
+          <div class="mt-10 flex flex-wrap items-center gap-6 lg:gap-12 text-sm font-semibold text-aceBlack/60 animate-slide-up" style="animation-delay: 0.5s;">
+            <div class="flex items-center gap-2">
+              <i class="fas fa-star text-aceYellow text-base"></i>
+              <span>4.8 ★ Google Rating</span>
+              <span class="text-aceBlack/40 mx-1">•</span>
+              <span>(5 reviews)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fas fa-truck-fast text-aceGreen text-base"></i>
+              <span>Nationwide Delivery</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fas fa-phone text-aceYellow text-base"></i>
+              <span>+92 300 8998211</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual -->
+        <div class="order-1 lg:order-2 relative h-[500px] lg:h-[620px] animate-slide-up" style="animation-delay: 0.6s;">
+          <div class="relative h-full rounded-3xl overflow-hidden shadow-2xl border border-black/10 group">
+            <!-- Placeholder machinery illustration -->
+            <div class="absolute inset-0 bg-gradient-to-br from-aceGrayCard to-white relative">
+              <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1625246236177-618925603098?ixlib=rb-4.0.0&auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-aceBlack/40 via-transparent to-transparent"></div>
+              <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-aceBlack/20 to-transparent"></div>
+
+              <div class="absolute bottom-8 left-8 z-10 flex flex-col gap-2">
+                <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/90 backdrop-blur shadow-sm border border-black/10">
+                  <span class="w-2 h-2 rounded-full bg-aceGreen"></span>
+                  <span class="text-xs font-bold text-aceBlack uppercase tracking-wider">In Stock</span>
+                </div>
+                <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/90 backdrop-blur shadow-sm border border-black/10">
+                  <i class="fas fa-shipping-fast text-aceYellow text-sm"></i>
+                  <span class="text-xs font-bold text-aceBlack">Deliver Pakistan-wide</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating feature badge -->
+            <div class="absolute top-6 right-6 w-24 h-24 rounded-full bg-white/90 backdrop-blur-md flex flex-col items-center justify-center gap-1 border border-white/60 shadow-xl">
+              <div class="w-10 h-10 rounded-full bg-aceYellow flex items-center justify-center text-2xl text-aceBlack shadow-ace">
+                <i class="fas fa-cow"></i>
+              </div>
+              <span class="text-[10px] font-bold text-aceBlack uppercase tracking-wider leading-tight">Cow Comfort</span>
+            </div>
+            <div class="absolute bottom-6 left-6 w-24 h-24 rounded-full bg-white/90 backdrop-blur-md flex flex-col items-center justify-center gap-1 border border-white/60 shadow-xl">
+              <div class="w-10 h-10 rounded-full bg-aceGreen flex items-center justify-center text-2xl text-white shadow-lg">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <span class="text-[10px] font-bold text-aceBlack uppercase tracking-wider leading-tight">Genuine Parts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       STATS / TRUST BAR
+       ========================================= -->
+  <section class="bg-aceBlack text-white py-16 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.0&auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-40"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-aceBlack/90 via-aceBlack/80 to-aceBlack/90"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm">
+          <div class="text-4xl md:text-5xl font-heading font-bold text-aceYellow mb-1 count-up" data-target="12" data-suffix="+">0</div>
+          <div class="text-xs uppercase tracking-widest text-white/50 font-semibold">Years Experience</div>
+        </div>
+        <div class="p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm">
+          <div class="text-4xl md:text-5xl font-heading font-bold text-aceYellow mb-1 count-up" data-target="3" data-suffix="+">0</div>
+          <div class="text-xs uppercase tracking-widest text-white/50 font-semibold">Turkish Brands</div>
+        </div>
+        <div class="p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm">
+          <div class="text-4xl md:text-5xl font-heading font-bold text-aceYellow mb-1 count-up" data-target="500" data-suffix="+">0</div>
+          <div class="text-xs uppercase tracking-widest text-white/50 font-semibold">Machines Installed</div>
+        </div>
+        <div class="p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm">
+          <div class="text-4xl md:text-5xl font-heading font-bold text-aceYellow mb-1 count-up" data-target="4.8">0</div>
+          <div class="text-xs uppercase tracking-widest text-white/50 font-semibold">Google Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       PRODUCT CATEGORIES
+       ========================================= -->
+  <section id="products" class="py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-aceGreen font-bold text-sm uppercase tracking-wider">Our Offerings</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-aceBlack mt-3">Imported Turkish Machinery &amp; Genuine Parts</h2>
+        <p class="text-aceBlack/60 mt-4 max-w-2xl mx-auto">Everything a modern dairy farm needs — from single milking machines to complete turnkey parlours, backed by authentic Turkish spare parts.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Product Card 1 -->
+        <div class="group product-card reveal" data-delay="100">
+          <div class="h-48 rounded-2xl bg-aceGrayCard overflow-hidden relative border border-black/5 group-hover:border-aceYellow/50 transition-colors">
+            <div class="absolute inset-0 flex items-center justify-center text-4xl text-aceBlack/10 group-hover:text-aceYellow/20 transition-colors">
+              <i class="fas fa-cow"></i>
+            </div>
+            <div class="absolute top-4 right-4 bg-aceGreen text-white px-3 py-1 rounded-full text-xs font-bold shadow-ace">Turkish Import</div>
+          </div>
+          <div class="mt-5">
+            <h3 class="font-heading text-xl font-bold text-aceBlack mb-2 group-hover:text-aceGreen transition-colors">Milking Machines</h3>
+            <p class="text-sm text-aceBlack/60 mb-4 line-clamp-2">Portable and bucket milking machines ideal for small to medium herds — hygienic, efficient, easy to maintain.</p>
+            <a href="#contact" class="inline-flex items-center gap-1.5 text-sm font-bold text-aceGreen group-hover:text-aceYellowHover transition-colors">
+              View details <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="group product-card reveal" data-delay="200">
+          <div class="h-48 rounded-2xl bg-aceGrayCard overflow-hidden relative border border-black/5 group-hover:border-aceYellow/50 transition-colors">
+            <div class="absolute inset-0 flex items-center justify-center text-4xl text-aceBlack/10 group-hover:text-aceYellow/20 transition-colors">
+              <i class="fas fa-building"></i>
+            </div>
+            <div class="absolute top-4 right-4 bg-aceYellow text-aceBlack px-3 py-1 rounded-full text-xs font-bold shadow-ace">Turnkey Solution</div>
+          </div>
+          <div class="mt-5">
+            <h3 class="font-heading text-xl font-bold text-aceBlack mb-2 group-hover:text-aceGreen transition-colors">Complete Milking Parlours</h3>
+            <p class="text-sm text-aceBlack/60 mb-4 line-clamp-2">Fully imported Turkish milking parlour systems for commercial dairy farms — designed for scale and productivity.</p>
+            <a href="#contact" class="inline-flex items-center gap-1.5 text-sm font-bold text-aceGreen group-hover:text-aceYellowHover transition-colors">
+              Request quote <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="group product-card reveal" data-delay="300">
+          <div class="h-48 rounded-2xl bg-aceGrayCard overflow-hidden relative border border-black/5 group-hover:border-aceYellow/50 transition-colors">
+            <div class="absolute inset-0 flex items-center justify-center text-4xl text-aceBlack/10 group-hover:text-aceYellow/20 transition-colors">
+              <i class="fas fa-brush"></i>
+            </div>
+            <div class="absolute top-4 right-4 bg-aceGreen text-white px-3 py-1 rounded-full text-xs font-bold shadow-ace">Animal Welfare</div>
+          </div>
+          <div class="mt-5">
+            <h3 class="font-heading text-xl font-bold text-aceBlack mb-2 group-hover:text-aceGreen transition-colors">Cow Comfort Brushes</h3>
+            <p class="text-sm text-aceBlack/60 mb-4 line-clamp-2">Automatic grooming brushes that keep cattle clean, relaxed, and healthier — boosting milk yield naturally.</p>
+            <a href="#contact" class="inline-flex items-center gap-1.5 text-sm font-bold text-aceGreen group-hover:text-aceYellowHover transition-colors">
+              View details <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="group product-card reveal" data-delay="400">
+          <div class="h-48 rounded-2xl bg-aceGrayCard overflow-hidden relative border border-black/5 group-hover:border-aceYellow/50 transition-colors">
+            <div class="absolute inset-0 flex items-center justify-center text-4xl text-aceBlack/10 group-hover:text-aceYellow/20 transition-colors">
+              <i class="fas fa-tools"></i>
+            </div>
+            <div class="absolute top-4 right-4 bg-aceYellow text-aceBlack px-3 py-1 rounded-full text-xs font-bold shadow-ace">Genuine Parts</div>
+          </div>
+          <div class="mt-5">
+            <h3 class="font-heading text-xl font-bold text-aceBlack mb-2 group-hover:text-aceGreen transition-colors">Genuine Replacement Parts</h3>
+            <p class="text-sm text-aceBlack/60 mb-4 line-clamp-2">Authentic Turkish spare parts for milking machinery — fast delivery across Faisalabad and all of Pakistan.</p>
+            <a href="https://wa.me/923008998211?text=Hi%20Ace%20International,%20I%20want%20to%20order%20genuine%20spare%20parts%20for%20my%20milking%20machine.%20Please%20share%20availability%20and%20price."
+               class="inline-flex items-center gap-1.5 text-sm font-bold text-aceGreen group-hover:text-aceYellowHover transition-colors" target="_blank" rel="noopener noreferrer">
+              Order on WhatsApp <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       WHY CHOOSE US
+       ========================================= -->
+  <section id="why" class="py-20 lg:py-28 bg-aceGrayCard">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="reveal">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-aceYellow flex items-center justify-center text-2xl text-aceBlack shadow-ace">
+              <i class="fas fa-star"></i>
+            </div>
+            <h2 class="font-heading text-3xl font-bold text-aceBlack">Why Pakistani Farmers Choose Ace International</h2>
+          </div>
+          <p class="text-aceBlack/60 text-lg leading-relaxed mb-8">
+            We don't just sell machinery — we partner with you to grow your dairy farm. Genuine Turkish quality, honest pricing, and support that doesn't end after the sale.
+          </p>
+
+          <div class="space-y-5">
+            <div class="flex items-start gap-3 reveal">
+              <div class="mt-1 w-6 h-6 rounded-full bg-aceGreen text-white flex items-center justify-center text-xs font-bold flex-shrink-0">1</div>
+              <div>
+                <h4 class="font-bold text-aceBlack">Genuine Turkish Import</h4>
+                <p class="text-sm text-aceBlack/60">Direct imports from Turkey's leading dairy machinery manufacturers — no compromises on quality.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 reveal" data-delay="100">
+              <div class="mt-1 w-6 h-6 rounded-full bg-aceGreen text-white flex items-center justify-center text-xs font-bold flex-shrink-0">2</div>
+              <div>
+                <h4 class="font-bold text-aceBlack">WhatsApp Ordering</h4>
+                <p class="text-sm text-aceBlack/60">Order spare parts and request quotes directly on WhatsApp at +92 300 8998211.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 reveal" data-delay="200">
+              <div class="mt-1 w-6 h-6 rounded-full bg-aceGreen text-white flex items-center justify-center text-xs font-bold flex-shrink-0">3</div>
+              <div>
+                <h4 class="font-bold text-aceBlack">Nationwide Delivery</h4>
+                <p class="text-sm text-aceBlack/60">Delivering machines and parts across Faisalabad and all over Pakistan.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 reveal" data-delay="300">
+              <div class="mt-1 w-6 h-6 rounded-full bg-aceGreen text-white flex items-center justify-center text-xs font-bold flex-shrink-0">4</div>
+              <div>
+                <h4 class="font-bold text-aceBlack">Installation Support</h4>
+                <p class="text-sm text-aceBlack/60">Expert guidance on setup and installation so your parlour runs from day one.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative h-[500px] reveal" data-delay="200">
+          <div class="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl border border-black/10">
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1575047187417-69677303e789?ixlib=rb-4.0.0&auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center"></div>
+            <div class="absolute inset-0 bg-gradient-to-tr from-aceGreen/90 to-aceGreen/70"></div>
+            <div class="absolute inset-0 flex items-end p-8">
+              <div class="text-white">
+                <span class="text-sm uppercase tracking-widest text-aceYellow/80 font-bold mb-2 block">Ready to upgrade your farm?</span>
+                <h3 class="text-2xl font-bold mb-4">Wholesale &amp; Retail Inquiries Welcome</h3>
+                <a
+                  href="https://wa.me/923008998211?text=Hello%20Ace%20International,%20I%20am%20interested%20in%20wholesale%20or%20retail%20dairy%20machinery.%20Please%20contact%20me."
+                  class="inline-block px-6 py-3 rounded-xl bg-aceYellow text-aceBlack font-bold shadow-ace hover:bg-aceYellowHover transition-colors"
+                  target="_blank" rel="noopener noreferrer"
+                >
+                  Message on WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       HOW IT WORKS
+       ========================================= -->
+  <section class="py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-aceGreen font-bold text-sm uppercase tracking-wider">Simple Process</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-aceBlack mt-3">From Inquiry to Installation</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="step-card reveal p-8 text-center" data-delay="100">
+          <div class="w-14 h-14 rounded-full bg-aceYellow text-aceBlack flex items-center justify-center mx-auto mb-6 font-heading font-bold text-2xl shadow-ace">
+            1
+          </div>
+          <h3 class="font-heading text-xl font-bold text-aceBlack mb-3">Choose</h3>
+          <p class="text-aceBlack/60 text-sm leading-relaxed">Browse milking machines, parlours, brushes &amp; spare parts.</p>
+        </div>
+        <div class="step-card reveal p-8 text-center" data-delay="200">
+          <div class="w-14 h-14 rounded-full bg-aceYellow text-aceBlack flex items-center justify-center mx-auto mb-6 font-heading font-bold text-2xl shadow-ace">
+            2
+          </div>
+          <h3 class="font-heading text-xl font-bold text-aceBlack mb-3">WhatsApp Us</h3>
+          <p class="text-aceBlack/60 text-sm leading-relaxed">Send us a message at +92 300 8998211 for a quote or to order parts.</p>
+        </div>
+        <div class="step-card reveal p-8 text-center" data-delay="300">
+          <div class="w-14 h-14 rounded-full bg-aceYellow text-aceBlack flex items-center justify-center mx-auto mb-6 font-heading font-bold text-2xl shadow-ace">
+            3
+          </div>
+          <h3 class="font-heading text-xl font-bold text-aceBlack mb-3">Delivered</h3>
+          <p class="text-aceBlack/60 text-sm leading-relaxed">Nationwide delivery with installation support across Pakistan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       TESTIMONIALS
+       ========================================= -->
+  <section id="testimonials" class="py-20 lg:py-28 bg-aceGrayCard">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-aceGreen font-bold text-sm uppercase tracking-wider">Farmer Feedback</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-aceBlack mt-3">Trusted by Dairy Farmers</h2>
+        <div class="flex justify-center gap-1 text-aceYellow mt-4">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
+          <span class="ml-2 text-sm font-bold text-aceBlack">4.8 ★ (5 Google Reviews)</span>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-3xl p-8 shadow-ace-card border border-black/5 reveal" data-delay="100">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-full bg-aceGrayCard overflow-hidden border border-black/10">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80" alt="Farmer" class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h4 class="font-bold text-aceBlack">Asif Raza</h4>
+              <p class="text-xs text-aceBlack/50">Faisalabad</p>
+            </div>
+          </div>
+          <div class="flex text-aceYellow text-sm mb-3">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
+          </div>
+          <p class="text-aceBlack/60 text-sm leading-relaxed italic">
+            "The milking machine from Ace International saved us hours every day. Genuine Turkish quality and great support."
+          </p>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow-ace-card border border-black/5 reveal" data-delay="200">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-full bg-aceGrayCard overflow-hidden border border-black/10">
+              <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80" alt="Farmer" class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h4 class="font-bold text-aceBlack">Sara Malik</h4>
+              <p class="text-xs text-aceBlack/50">Toba Tek Singh</p>
+            </div>
+          </div>
+          <div class="flex text-aceYellow text-sm mb-3">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-aceBlack/60 text-sm leading-relaxed italic">
+            "Ordered spare parts on WhatsApp and they were delivered the next day. Highly recommend Ace International."
+          </p>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow-ace-card border border-black/5 reveal" data-delay="300">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-full bg-aceGrayCard overflow-hidden border border-black/10">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f77e05?ixlib=rb-4.0.0&auto=format&fit=crop&w=150&q=80" alt="Farmer" class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h4 class="font-bold text-aceBlack">Tanveer Ahmed</h4>
+              <p class="text-xs text-aceBlack/50">Jhang</p>
+            </div>
+          </div>
+          <div class="flex text-aceYellow text-sm mb-3">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
+          </div>
+          <p class="text-aceBlack/60 text-sm leading-relaxed italic">
+            "Complete parlour installation was smooth. The cow comfort brushes are a game-changer for our herd."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       FAQ SECTION
+       ========================================= -->
+  <section id="faq" class="py-20 lg:py-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-aceGreen font-bold text-sm uppercase tracking-wider">Questions?</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-aceBlack mt-3">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="space-y-4 reveal" id="faqAccordion">
+        <div class="faq-item border border-black/10 rounded-2xl overflow-hidden shadow-ace-card">
+          <button class="faq-question w-full flex items-center justify-between py-6 px-6 bg-white text-left text-lg font-bold text-aceBlack hover:bg-aceGrayCard transition-colors" aria-expanded="false" aria-controls="faq-answer-1">
+            Do you deliver across Pakistan?
+            <i class="fas fa-chevron-down text-aceGreen transition-transform duration-300"></i>
+          </button>
+          <div id="faq-answer-1" class="faq-answer hidden px-6 pb-6 bg-white text-aceBlack/70 text-sm leading-relaxed">
+            Yes. We deliver milking machines, parlours, brushes and spare parts nationwide — including Faisalabad, Jhang, Toba Tek Singh, and all major cities in Punjab and beyond.
+          </div>
+        </div>
+
+        <div class="faq-item border border-black/10 rounded-2xl overflow-hidden shadow-ace-card">
+          <button class="faq-question w-full flex items-center justify-between py-6 px-6 bg-white text-left text-lg font-bold text-aceBlack hover:bg-aceGrayCard transition-colors" aria-expanded="false" aria-controls="faq-answer-2">
+            Are the spare parts genuine Turkish?
+            <i class="fas fa-chevron-down text-aceGreen transition-transform duration-300"></i>
+          </button>
+          <div id="faq-answer-2" class="faq-answer hidden px-6 pb-6 bg-white text-aceBlack/70 text-sm leading-relaxed">
+            Absolutely. All our machinery and replacement parts are direct imports from Turkey's leading dairy equipment manufacturers.
+          </div>
+        </div>
+
+        <div class="faq-item border border-black/10 rounded-2xl overflow-hidden shadow-ace-card">
+          <button class="faq-question w-full flex items-center justify-between py-6 px-6 bg-white text-left text-lg font-bold text-aceBlack hover:bg-aceGrayCard transition-colors" aria-expanded="false" aria-controls="faq-answer-3">
+            Can I order spare parts on WhatsApp?
+            <i class="fas fa-chevron-down text-aceGreen transition-transform duration-300"></i>
+          </button>
+          <div id="faq-answer-3" class="faq-answer hidden px-6 pb-6 bg-white text-aceBlack/70 text-sm leading-relaxed">
+            Yes. Just message us at <a href="https://wa.me/923008998211" class="text-aceGreen font-bold hover:underline" target="_blank" rel="noopener noreferrer">+92 300 8998211</a> with the part you need, and we'll share availability and pricing.
+          </div>
+        </div>
+
+        <div class="faq-item border border-black/10 rounded-2xl overflow-hidden shadow-ace-card">
+          <button class="faq-question w-full flex items-center justify-between py-6 px-6 bg-white text-left text-lg font-bold text-aceBlack hover:bg-aceGrayCard transition-colors" aria-expanded="false" aria-controls="faq-answer-4">
+            Do you provide installation support?
+            <i class="fas fa-chevron-down text-aceGreen transition-transform duration-300"></i>
+          </button>
+          <div id="faq-answer-4" class="faq-answer hidden px-6 pb-6 bg-white text-aceBlack/70 text-sm leading-relaxed">
+            Yes. We offer expert guidance on setup and installation so your milking parlour is up and running from day one.
+          </div>
+        </div>
+
+        <div class="faq-item border border-black/10 rounded-2xl overflow-hidden shadow-ace-card">
+          <button class="faq-question w-full flex items-center justify-between py-6 px-6 bg-white text-left text-lg font-bold text-aceBlack hover:bg-aceGrayCard transition-colors" aria-expanded="false" aria-controls="faq-answer-5">
+            What are your location and contact details?
+            <i class="fas fa-chevron-down text-aceGreen transition-transform duration-300"></i>
+          </button>
+          <div id="faq-answer-5" class="faq-answer hidden px-6 pb-6 bg-white text-aceBlack/70 text-sm leading-relaxed">
+            We are located at <strong>18 km West Canal Rd, Civic Center, Faisalabad, 38000</strong>. Call or WhatsApp us at <strong>+92 300 8998211</strong>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       CONTACT / QUOTE SECTION
+       ========================================= -->
+  <section id="contact" class="py-20 lg:py-28 bg-aceBlack relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1617438377792-07d993d7b9e9?ixlib=rb-4.0.0&auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-30"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-aceBlack/95 via-aceBlack/85 to-aceBlack/95"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        
+        <!-- Contact Info -->
+        <div class="space-y-8">
+          <div class="reveal">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Get in Touch</h2>
+            <p class="text-white/70 text-lg leading-relaxed max-w-lg">
+              Interested in imported Turkish dairy machinery or genuine spare parts? Reach out today and let's cultivate growth together.
+            </p>
+          </div>
+
+          <div class="space-y-6 reveal" data-delay="100">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-aceYellow/10 flex items-center justify-center text-2xl text-aceYellow flex-shrink-0 mt-0.5">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">Visit Us</h4>
+                <p class="text-white/60 text-sm">18 km West Canal Rd, Civic Center, Faisalabad, 38000, Pakistan</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-aceYellow/10 flex items-center justify-center text-2xl text-aceYellow flex-shrink-0 mt-0.5">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">Call / WhatsApp</h4>
+                <p class="text-white/60 text-sm">+92 300 8998211 (Direct &amp; WhatsApp)</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-aceYellow/10 flex items-center justify-center text-2xl text-aceYellow flex-shrink-0 mt-0.5">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">Hours</h4>
+                <p class="text-white/60 text-sm">Mon – Sat: 9:00 AM – 6:00 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex gap-3 reveal" data-delay="200">
+            <a href="https://wa.me/923008998211?text=Hi%20Ace%20International,%20I%20would%20like%20more%20information%20about%20your%20dairy%20machinery%20and%20spare%20parts."
+               class="flex-1 flex items-center justify-center gap-2 py-4 rounded-2xl bg-aceYellow text-aceBlack font-bold shadow-ace hover:bg-aceYellowHover transition-colors active:scale-95"
+               target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp text-xl"></i> <span>Chat on WhatsApp</span>
+            </a>
+            <a href="tel:+923008998211" class="flex-1 flex items-center justify-center gap-2 py-4 rounded-2xl border border-white/20 bg-white/5 text-white font-bold hover:bg-white/10 transition-colors active:scale-95">
+              <i class="fas fa-phone text-xl"></i> <span>Call Now</span>
+            </a>
+          </div>
+
+          <div class="flex gap-3 reveal" data-delay="300">
+            <a href="#" class="w-12 h-12 rounded-xl border border-white/20 flex items-center justify-center text-white/60 hover:bg-white/10 hover:text-white transition-colors">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-12 h-12 rounded-xl border border-white/20 flex items-center justify-center text-white/60 hover:bg-white/10 hover:text-white transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="w-12 h-12 rounded-xl border border-white/20 flex items-center justify-center text-white/60 hover:bg-white/10 hover:text-white transition-colors">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quote Form -->
+        <div class="reveal" data-delay="100">
+          <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-10 border border-white">
+            <h3 class="font-heading text-2xl font-bold text-aceBlack mb-6">Request a Parlour Quote</h3>
+            <form id="quoteForm" class="space-y-5" novalidate>
+              <div class="grid md:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-sm font-bold text-aceBlack mb-1.5">Full Name</label>
+                  <input type="text" id="qName" required placeholder="e.g. Ali Raza" class="w-full px-4 py-3 rounded-xl border border-black/10 focus:ring-2 focus:ring-aceYellow focus:border-transparent outline-none transition-all" />
+                </div>
+                <div>
+                  <label class="block text-sm font-bold text-aceBlack mb-1.5">Phone / WhatsApp</label>
+                  <input type="tel" id="qPhone" required placeholder="+92 3xx xxx xxxx" class="w-full px-4 py-3 rounded-xl border border-black/10 focus:ring-2 focus:ring-aceYellow focus:border-transparent outline-none transition-all" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-bold text-aceBlack mb-1.5">City</label>
+                <input type="text" id="qCity" placeholder="e.g. Faisalabad" class="w-full px-4 py-3 rounded-xl border border-black/10 focus:ring-2 focus:ring-aceYellow focus:border-transparent outline-none transition-all" />
+              </div>
+              <div>
+                <label class="block text-sm font-bold text-aceBlack mb-1.5">Interested In</label>
+                <select id="qInterest" class="w-full px-4 py-3 rounded-xl border border-black/10 focus:ring-2 focus:ring-aceYellow focus:border-transparent outline-none transition-all bg-white">
+                  <option value="milking-machine">Milking Machine</option>
+                  <option value="milking-parlour">Complete Milking Parlour</option>
+                  <option value="comfort-brush">Cow Comfort Brush</option>
+                  <option value="spare-parts">Genuine Spare Parts</option>
+                  <option value="other">Other / General Inquiry</option>
+                </select>
+              </div>
+              <div class="md:grid md:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-sm font-bold text-aceBlack mb-1.5">Herd Size (approx.)</label>
+                  <input type="number" id="qHerd" placeholder="e.g. 50 cows" class="w-full px-4 py-3 rounded-xl border border-black/10 focus:ring-2 focus:ring-aceYellow focus:border-transparent outline-none transition-all" />
+                </div>
+                <div>
+                  <label class="block text-sm font-bold text-aceBlack mb-1.5">Timeline</label>
+                  <select id="qTimeline" class="w-full px-4 py-3 rounded-xl border border-black/10 focus:ring-2 focus:ring-aceYellow focus:border-transparent outline-none transition-all bg-white">
+                    <option value="asap">As soon as possible</option>
+                    <option value="1-month">Within 1 month</option>
+                    <option value="2-3-months">2–3 months</option>
+                    <option value="exploring">Just exploring</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-bold text-aceBlack mb-1.5">Additional Message</label>
+                <textarea id="qMessage" rows="3" placeholder="Any specific requirements..." class="w-full px-4 py-3 rounded-xl border border-black/10 focus:ring-2 focus:ring-aceYellow focus:border-transparent outline-none transition-all"></textarea>
+              </div>
+              <button type="submit" id="submitBtn" class="w-full py-4 rounded-2xl bg-aceYellow text-aceBlack font-heading font-bold text-lg shadow-ace hover:bg-aceYellowHover hover:shadow-ace/80 transition-all active:scale-95 flex items-center justify-center gap-2">
+                <i class="fas fa-paper-plane"></i> Send Quote Request
+              </button>
+              <p id="formMsg" class="text-xs text-center text-aceGreen font-semibold hidden"></p>
+            </form>
+          </div>
+
+          <div class="mt-8 bg-aceYellow/10 border border-aceYellow/20 rounded-2xl p-6 text-center reveal" data-delay="200">
+            <div class="text-3xl text-aceYellow mb-3"><i class="fas fa-whatsapp"></i></div>
+            <h4 class="font-bold text-aceBlack">Prefer WhatsApp?</h4>
+            <p class="text-aceBlack/70 text-sm mb-4">Send us your details directly and we'll prepare a custom parlour quote for you.</p>
+            <a href="https://wa.me/923008998211?text=Hi%20Ace%20International,%20I%20would%20like%20to%20request%20a%20custom%20parlour%20quote.%20Please%20contact%20me."
+               class="inline-block px-6 py-3 rounded-xl bg-aceBlack text-aceYellow font-bold border border-aceYellow hover:bg-aceYellow hover:text-aceBlack transition-colors"
+               target="_blank" rel="noopener noreferrer">
+              Message on WhatsApp <i class="fab fa-whatsapp ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+  <footer class="bg-aceDarkSlate text-white/70 py-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-aceYellow flex items-center justify-center text-xl text-aceBlack">
+            <span class="font-heading font-bold">A</span>
+          </div>
+          <div>
+            <div class="font-heading font-bold text-white text-lg">Ace International</div>
+            <div class="text-xs text-aceYellow/70 uppercase tracking-wider">Farm Equipments</div>
+          </div>
+        </div>
+
+        <div class="hidden md:flex items-center gap-8 text-sm">
+          <a href="#home" class="hover:text-white transition-colors">Home</a>
+          <a href="#products" class="hover:text-white transition-colors">Products</a>
+          <a href="#why" class="hover:text-white transition-colors">Why Us</a>
+          <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+          <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a href="https://wa.me/923008998211" class="text-aceYellow hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp text-xl"></i> +92 300 8998211
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-10 border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
+        <div class="text-center md:text-left">
+          &copy; <span id="year"></span> Ace International (Farm Equipments). All rights reserved.
+        </div>
+        <div class="flex gap-6 text-center md:text-right">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-aceYellow text-aceBlack font-bold shadow-ace hover:bg-aceYellowHover transition-all active:scale-90 opacity-0 translate-y-10 pointer-events-none z-50">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
