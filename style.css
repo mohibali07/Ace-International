@@ -1,35 +1,40 @@
 /* =========================================
-   Ace International — Custom Styles
-   Scrollbar, scroll-reveal, and micro-animations
+   Ace International — Premium Design System & UI/UX Styles
    ========================================= */
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f4f5f7; /* aceGrayCard */
+  background: #f1f3f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ffc80a; /* aceYellow */
-  border-radius: 6px;
-  border: 2px solid #f4f5f7;
+  background: #ffc80a;
+  border-radius: 8px;
+  border: 2px solid #f1f3f5;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #e5b200; /* aceYellowHover */
+  background: #e5b200;
 }
 
-/* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #ffc80a #f4f5f7;
+  scrollbar-color: #ffc80a #f1f3f5;
 }
 
-/* Accessibility: hide visually but keep for screen readers */
+/* Accessibility */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -42,22 +47,59 @@
   white-space: nowrap;
 }
 
-/* Focus outline for keyboard navigation */
 a:focus-visible,
-button:focus-visible {
-  outline: 3px solid #ffc80a;
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #ffc80a;
   outline-offset: 2px;
-  border-radius: 4px;
 }
 
-/* =========================================
-   Scroll Reveal Animation Classes
-   Used with IntersectionObserver in script.js
-   ========================================= */
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-dark {
+  background: rgba(18, 19, 22, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Micro-animations & hover states */
+.product-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -10px rgba(18, 19, 22, 0.12);
+}
+
+.product-img-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.product-img-wrap img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .product-img-wrap img {
+  transform: scale(1.06);
+}
+
+/* Scroll reveal classes */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .reveal.active {
@@ -65,101 +107,158 @@ button:focus-visible {
   transform: translateY(0);
 }
 
-/* Staggered reveal delays via inline style are handled in JS */
-
-/* =========================================
-   Navbar Scrolled State
-   ========================================= */
-.navbar-scrolled {
-  box-shadow: 0 4px 20px -4px rgba(18, 19, 22, 0.08);
+/* Shimmer pulse for badges */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
 }
 
-/* =========================================
-   Product Card Hover Lift
-   ========================================= */
-.product-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.shimmer-badge {
+  position: relative;
+  overflow: hidden;
 }
 
-.product-card:hover {
-  transform: translateY(-4px);
+.shimmer-badge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 3s infinite;
 }
 
-/* =========================================
-   FAQ Accordion
-   ========================================= */
+/* Tab filter pill active styles */
+.tab-btn.active {
+  background-color: #121316;
+  color: #ffffff;
+  border-color: #121316;
+  box-shadow: 0 4px 15px -2px rgba(18, 19, 22, 0.2);
+}
+
+/* FAQ Accordion */
 .faq-item {
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .faq-item:hover {
   border-color: #ffc80a;
-  box-shadow: 0 4px 12px rgba(255, 200, 10, 0.08);
 }
 
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease, padding 0.35s ease;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
 }
 
 .faq-answer.open {
-  max-height: 500px;
-  padding: 0 6px 12px 6px;
+  max-height: 400px;
+  opacity: 1;
 }
 
-/* Rotate chevron on open */
+.faq-question .fa-chevron-down {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .faq-question .fa-chevron-down.rotate {
   transform: rotate(180deg);
 }
 
-/* =========================================
-   Count-up digit style
-   ========================================= */
+/* Range slider styling for Farm ROI Calculator */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 9999px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffc80a;
+  border: 3px solid #121316;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffc80a;
+  border: 3px solid #121316;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Floating WhatsApp Widget */
+.floating-wa-btn {
+  animation: pulse-shadow 2.5s infinite;
+}
+
+@keyframes pulse-shadow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  transform: scale(0.95) translateY(15px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-backdrop.open .modal-content {
+  transform: scale(1) translateY(0);
+}
+
+/* Tabular nums for count-up */
 .count-up {
   font-variant-numeric: tabular-nums;
 }
 
-/* =========================================
-   Form success message
-   ========================================= */
-#formMsg.show {
-  display: block;
-  animation: fadeIn 0.4s ease forwards;
-}
-
-/* =========================================
-   Back to top button
-   ========================================= */
-#backToTop {
-  transition: all 0.3s ease;
-}
-
-#backToTop.visible {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-  pointer-events: auto !important;
-}
-
-/* =========================================
-   Reduce motion preference
-   ========================================= */
+/* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
-  .faq-answer,
+  .product-card,
+  .modal-content,
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-
   .reveal {
     opacity: 1;
     transform: none;
-  }
-
-  .animate-blob {
-    animation: none;
   }
 }
